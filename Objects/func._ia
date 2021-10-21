@@ -1,0 +1,4 @@
+--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork 
+-IC:\Users\Михаил\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+--pd "__UVISION_VERSION SETA 535" --pd "STM32F10X_MD SETA 1"
+--list .\listings\func.lst --xref -o .\objects\func.o --depend .\objects\func.d "func.s"

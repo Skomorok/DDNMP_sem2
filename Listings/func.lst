@@ -1,0 +1,172 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             MAIN, CODE, READONLY
+    2 00000000         
+    3 00000000         Search_Zero
+                               PROC
+    4 00000000                 EXPORT           Search_Zero
+    5 00000000 B500            push             {LR}
+    6 00000002         ;R4-i R5-j 
+    7 00000002 F04F 0400       mov              R4,#0       ; Запись чи
+                                                            сла в реги�
+                                                            �тр
+    8 00000006 F04F 0500       mov              R5,#0       ; Запись чи
+                                                            сла в реги�
+                                                            �тр
+    9 0000000A F04F 0300       mov              R3,#0       ; Запись чи
+                                                            сла в реги�
+                                                            �тр
+   10 0000000E         
+   11 0000000E         first
+   12 0000000E         
+   13 0000000E 5907            ldr              R7,[R0,R4]  ; Запись в �
+                                                            �егистр
+   14 00000010         
+   15 00000010 F851 9005       ldr              R9,[R1,R5]  ; Запись в �
+                                                            �егистр
+   16 00000014         
+   17 00000014 454F            cmp              R7,R9       ; Сравнени�
+                                                            � региста R7
+                                                             с R9
+   18 00000016 D000            BEQ              loop        ; Переход к
+                                                             метке при 
+                                                            условии ра
+                                                            венства
+   19 00000018         
+   20 00000018 E002            B                no
+   21 0000001A         
+   22 0000001A         
+   23 0000001A         
+   24 0000001A         loop
+   25 0000001A F103 0301       add              R3,#1       ; Операция 
+                                                            сложения(п
+                                                            рибавляем 
+                                                            1 к R3 и запи
+                                                            сываем)
+   26 0000001E 6013            str              R3, [R2]    ; Запись из
+                                                             регистра 
+   27 00000020         no
+   28 00000020         
+   29 00000020 F104 0401       add              R4,#1       ; Операция 
+                                                            сложения(п
+                                                            рибавляем 
+                                                            1 к R4 и запи
+                                                            сываем)
+   30 00000024 2C0A            cmp              R4,#10      ; Сравнени�
+                                                            � с числом
+   31 00000026 D000            BEQ              endd        ; Переход к
+                                                             метке по у
+                                                            словию рав
+                                                            ества
+   32 00000028 E7F1            B                first
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   33 0000002A         
+   34 0000002A         
+   35 0000002A         endd
+   36 0000002A         
+   37 0000002A F04F 0400       mov              R4,#0       ; Запись чи
+                                                            сла в реги�
+                                                            �тр
+   38 0000002E F105 0501       add              R5,#1       ; Операция 
+                                                            сложения(п
+                                                            рибавляем 
+                                                            1 к R5 и запи
+                                                            сываем)
+   39 00000032 2D0A            cmp              R5,#10      ; Сравнени�
+                                                            � в числом
+   40 00000034 D000            BEQ              endd2       ; Переход к
+                                                             метке по у
+                                                            словию рав
+                                                            енства
+   41 00000036         
+   42 00000036 E7EA            B                first
+   43 00000038         
+   44 00000038         
+   45 00000038         
+   46 00000038         
+   47 00000038         endd2
+   48 00000038         
+   49 00000038         ;while11
+   50 00000038         ;B while11
+   51 00000038 BD00            pop              {PC}
+   52 0000003A                 ENDP
+   53 0000003A                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\func.d -o.\objects\func.o -IC:\Users\������\AppData\Loca
+l\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__EVAL SETA 1"
+ --predefine="__UVISION_VERSION SETA 535" --predefine="STM32F10X_MD SETA 1" --l
+ist=.\listings\func.lst func.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 1 in file func.s
+   Uses
+      None
+Comment: MAIN unused
+Search_Zero 00000000
+
+Symbol: Search_Zero
+   Definitions
+      At line 3 in file func.s
+   Uses
+      At line 4 in file func.s
+Comment: Search_Zero used once
+endd 0000002A
+
+Symbol: endd
+   Definitions
+      At line 35 in file func.s
+   Uses
+      At line 31 in file func.s
+Comment: endd used once
+endd2 00000038
+
+Symbol: endd2
+   Definitions
+      At line 47 in file func.s
+   Uses
+      At line 40 in file func.s
+Comment: endd2 used once
+first 0000000E
+
+Symbol: first
+   Definitions
+      At line 11 in file func.s
+   Uses
+      At line 32 in file func.s
+      At line 42 in file func.s
+
+loop 0000001A
+
+Symbol: loop
+   Definitions
+      At line 24 in file func.s
+   Uses
+      At line 18 in file func.s
+Comment: loop used once
+no 00000020
+
+Symbol: no
+   Definitions
+      At line 27 in file func.s
+   Uses
+      At line 20 in file func.s
+Comment: no used once
+7 symbols
+340 symbols in table

@@ -1,0 +1,7 @@
+Dependencies for Project 'lr', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\startup.s)(0x60A4EE18)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Users\Михаил\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 535" --pd "STM32F10X_MD SETA 1"--list .\listings\startup.lst --xref -o .\objects\main_1.o --depend .\objects\main_1.d)
+F (.\func.s)(0x615BFB8B)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Users\Михаил\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 535" --pd "STM32F10X_MD SETA 1"--list .\listings\func.lst --xref -o .\objects\func.o --depend .\objects\func.d)
+F (.\main.c)(0x615BFAC1)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -IC:\Users\Михаил\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="535" -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
