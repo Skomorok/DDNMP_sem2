@@ -1,0 +1,152 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             CONSTANT_FLASH, DATA, READONLY
+    2 00000000 32 55 84 
+              22 00 51 
+              23 77 16 
+              73       mas     DCB              0x32, 0x55, 0x84, 0x22, 0x00, 0
+x51, 0x23, 0x77, 0x16, 0x73
+    3 0000000A 34 10 63 
+              19 74 48 
+              22 58 74 
+              32       mas2    DCB              0x34, 0x10, 0x63, 0x19, 0x74, 0
+x48, 0x22, 0x58, 0x74, 0x32
+    4 00000014                 AREA             VERIABLE_RAM, DATA, READWRITE
+    5 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00       result  SPACE            10
+    6 0000000A 00 00 00 
+              00 00 00 
+              00 00 00 
+              00       result2 SPACE            10
+    7 00000014                 AREA             MAIN, CODE, READONLY
+    8 00000000         
+    9 00000000         __main  PROC
+   10 00000000                 EXPORT           __main
+   11 00000000                 IMPORT           Search_Zero
+   12 00000000         
+   13 00000000         
+   14 00000000         
+   15 00000000         
+   16 00000000         while11
+   17 00000000 E7FE            B                while11
+   18 00000002                 ENDP
+   19 00000002                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\object
+s\main.d -o.\objects\main.o -I"H:\CUMP\Karpov D\second\RTE" -IC:\Keil_v5\ARM\CM
+SIS\Include -IDevice\Include --predefine="__EVAL SETA 1" --list=.\listings\main
+.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CONSTANT_FLASH 00000000
+
+Symbol: CONSTANT_FLASH
+   Definitions
+      At line 1 in file main.s
+   Uses
+      None
+Comment: CONSTANT_FLASH unused
+mas 00000000
+
+Symbol: mas
+   Definitions
+      At line 2 in file main.s
+   Uses
+      None
+Comment: mas unused
+mas2 0000000A
+
+Symbol: mas2
+   Definitions
+      At line 3 in file main.s
+   Uses
+      None
+Comment: mas2 unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+VERIABLE_RAM 00000000
+
+Symbol: VERIABLE_RAM
+   Definitions
+      At line 4 in file main.s
+   Uses
+      None
+Comment: VERIABLE_RAM unused
+result 00000000
+
+Symbol: result
+   Definitions
+      At line 5 in file main.s
+   Uses
+      None
+Comment: result unused
+result2 0000000A
+
+Symbol: result2
+   Definitions
+      At line 6 in file main.s
+   Uses
+      None
+Comment: result2 unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 7 in file main.s
+   Uses
+      None
+Comment: MAIN unused
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 9 in file main.s
+   Uses
+      At line 10 in file main.s
+Comment: __main used once
+while11 00000000
+
+Symbol: while11
+   Definitions
+      At line 16 in file main.s
+   Uses
+      At line 17 in file main.s
+Comment: while11 used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Search_Zero 00000000
+
+Symbol: Search_Zero
+   Definitions
+      At line 11 in file main.s
+   Uses
+      None
+Comment: Search_Zero unused
+1 symbol
+341 symbols in table

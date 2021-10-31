@@ -1,0 +1,231 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 00000400 
+                       Stack_Size
+                               EQU              0x400
+    2 00000000         
+    3 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+ = 3
+    4 00000000         Stack_Mem
+                               SPACE            Stack_Size
+    5 00000400         __initial_sp
+    6 00000400         
+    7 00000400 00000200 
+                       Heap_Size
+                               EQU              0x200
+    8 00000400                 AREA             HEAP, NOINIT, READWRITE, ALIGN 
+= 3
+    9 00000000         __heap_base
+   10 00000000         Heap_Mem
+                               SPACE            Heap_Size
+   11 00000200         __heap_limit
+   12 00000200         
+   13 00000200                 THUMB
+   14 00000200                 PRESERVE8
+   15 00000200         
+   16 00000200                 AREA             RESET, DATA, READONLY
+   17 00000000         
+   18 00000000 00000000        DCD              __initial_sp
+   19 00000004 00000000        DCD              Reset_Handler
+   20 00000008         
+   21 00000008                 AREA             |.text|, CODE, READONLY
+   22 00000000         
+   23 00000000         Reset_Handler
+                               PROC
+   24 00000000         
+   25 00000000                 IMPORT           __main
+   26 00000000 4802            LDR              R0, =__main
+   27 00000002 4700            BX               R0
+   28 00000004                 ENDP
+   29 00000004         
+   30 00000004                 IMPORT           __use_two_region_memory
+   31 00000004                 EXPORT           __user_initial_stackheap
+   32 00000004         
+   33 00000004         __user_initial_stackheap
+   34 00000004 4802            LDR              R0, =Heap_Mem
+   35 00000006 4903            LDR              R1, =(Stack_Mem + Stack_Size)
+   36 00000008 4A03            LDR              R2, =(Heap_Mem + Heap_Size)
+   37 0000000A 4B04            LDR              R3, =Stack_Mem
+   38 0000000C         
+   39 0000000C                 END
+              00000000 
+              00000000 
+              00000400 
+              00000200 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\startup.d -o.\objects\startup.o -IC:\Users\Михаил\AppDat
+a\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__EVAL S
+ETA 1" --predefine="__UVISION_VERSION SETA 535" --predefine="STM32F10X_MD SETA 
+1" --list=.\listings\startup.lst startup.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 3 in file startup.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 4 in file startup.s
+   Uses
+      At line 35 in file startup.s
+      At line 37 in file startup.s
+
+__initial_sp 00000400
+
+Symbol: __initial_sp
+   Definitions
+      At line 5 in file startup.s
+   Uses
+      At line 18 in file startup.s
+Comment: __initial_sp used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HEAP 00000000
+
+Symbol: HEAP
+   Definitions
+      At line 8 in file startup.s
+   Uses
+      None
+Comment: HEAP unused
+Heap_Mem 00000000
+
+Symbol: Heap_Mem
+   Definitions
+      At line 10 in file startup.s
+   Uses
+      At line 34 in file startup.s
+      At line 36 in file startup.s
+
+__heap_base 00000000
+
+Symbol: __heap_base
+   Definitions
+      At line 9 in file startup.s
+   Uses
+      None
+Comment: __heap_base unused
+__heap_limit 00000200
+
+Symbol: __heap_limit
+   Definitions
+      At line 11 in file startup.s
+   Uses
+      None
+Comment: __heap_limit unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 16 in file startup.s
+   Uses
+      None
+Comment: RESET unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 21 in file startup.s
+   Uses
+      None
+Comment: .text unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 23 in file startup.s
+   Uses
+      At line 19 in file startup.s
+Comment: Reset_Handler used once
+__user_initial_stackheap 00000004
+
+Symbol: __user_initial_stackheap
+   Definitions
+      At line 33 in file startup.s
+   Uses
+      At line 31 in file startup.s
+Comment: __user_initial_stackheap used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Heap_Size 00000200
+
+Symbol: Heap_Size
+   Definitions
+      At line 7 in file startup.s
+   Uses
+      At line 10 in file startup.s
+      At line 36 in file startup.s
+
+Stack_Size 00000400
+
+Symbol: Stack_Size
+   Definitions
+      At line 1 in file startup.s
+   Uses
+      At line 4 in file startup.s
+      At line 35 in file startup.s
+
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 25 in file startup.s
+   Uses
+      At line 26 in file startup.s
+Comment: __main used once
+__use_two_region_memory 00000000
+
+Symbol: __use_two_region_memory
+   Definitions
+      At line 30 in file startup.s
+   Uses
+      None
+Comment: __use_two_region_memory unused
+2 symbols
+350 symbols in table
