@@ -1,0 +1,128 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         ; Определение макроподстаново�
+                       �
+    3 00000000         
+    4 00000000 20000000 
+                       STACK   EQU              0x20000000  ;адрес сте�
+                                                            �а
+    5 00000000 00000500 
+                       STACK_SIZE
+                               EQU              0x500       ; размер ст
+                                                            эка
+    6 00000000 20000500 
+                       STACK_TOP
+                               EQU              STACK+STACK_SIZE ;вершин�
+                                                            � стека
+    7 00000000         
+    8 00000000         
+    9 00000000 00000000 
+                       NULL    EQU              0x00
+   10 00000000 00000001 
+                       ONE     EQU              0x01
+   11 00000000 00000004 
+                       FOUR    EQU              0x04
+   12 00000000 00000005 
+                       FIVE    EQU              0x05
+   13 00000000 00000010 
+                       SHEST   EQU              0x10
+   14 00000000 FFFFFFFF 
+                       MAX     EQU              0xFFFFFFFF
+   15 00000000         
+   16 00000000                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\stm32_equ.d -o.\objects\stm32_equ.o -IC:\Users\Admin\App
+Data\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__EVA
+L SETA 1" --predefine="__UVISION_VERSION SETA 535" --predefine="STM32F10X_MD SE
+TA 1" --list=.\listings\stm32_equ.lst stm32_EQU.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+FIVE 00000005
+
+Symbol: FIVE
+   Definitions
+      At line 12 in file stm32_EQU.s
+   Uses
+      None
+Comment: FIVE unused
+FOUR 00000004
+
+Symbol: FOUR
+   Definitions
+      At line 11 in file stm32_EQU.s
+   Uses
+      None
+Comment: FOUR unused
+MAX FFFFFFFF
+
+Symbol: MAX
+   Definitions
+      At line 14 in file stm32_EQU.s
+   Uses
+      None
+Comment: MAX unused
+NULL 00000000
+
+Symbol: NULL
+   Definitions
+      At line 9 in file stm32_EQU.s
+   Uses
+      None
+Comment: NULL unused
+ONE 00000001
+
+Symbol: ONE
+   Definitions
+      At line 10 in file stm32_EQU.s
+   Uses
+      None
+Comment: ONE unused
+SHEST 00000010
+
+Symbol: SHEST
+   Definitions
+      At line 13 in file stm32_EQU.s
+   Uses
+      None
+Comment: SHEST unused
+STACK 20000000
+
+Symbol: STACK
+   Definitions
+      At line 4 in file stm32_EQU.s
+   Uses
+      At line 6 in file stm32_EQU.s
+Comment: STACK used once
+STACK_SIZE 00000500
+
+Symbol: STACK_SIZE
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 5 in file stm32_EQU.s
+   Uses
+      At line 6 in file stm32_EQU.s
+Comment: STACK_SIZE used once
+STACK_TOP 20000500
+
+Symbol: STACK_TOP
+   Definitions
+      At line 6 in file stm32_EQU.s
+   Uses
+      None
+Comment: STACK_TOP unused
+9 symbols
+342 symbols in table

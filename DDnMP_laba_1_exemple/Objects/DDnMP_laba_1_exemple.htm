@@ -1,0 +1,40 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\Objects\DDnMP_laba_1_exemple.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\Objects\DDnMP_laba_1_exemple.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Nov 29 22:26:31 2021
+<BR><P>
+<H3>Maximum Stack Usage =          0 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[1]">startup</a> from startup.o(RESET) referenced from startup.o(RESET)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3><P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[3]"></a>data</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(MAIN))
+<BR><BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[2]"></a>main</STRONG> (Thumb, 170 bytes, Stack size 0 bytes, startup.o(MAIN))
+<BR><BR>[Calls]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startup
+</UL>
+
+<P><STRONG><a name="[1]"></a>startup</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, startup.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>
